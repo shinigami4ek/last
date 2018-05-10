@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+
+    <div class="container">
+        <h1 style="text-align:center">Add New University</h1>
+        <div style="margin:30px auto; width:35%">
+            <form action="/home" method="post">
+                <div class="form-group">
+                    <select class="form-control" name="universiteKategorisi" required>
+                        <option value="Social Sciences">Social Sciences</option>
+                        <option value="Earth Sciences">Earth Sciences</option>
+                        <option value="Engineering & Technology">Engineering & Technology</option>
+                        <option value="Humanities">Humanities</option>
+                        <option value="Natural Sciences & Mathematics">Natural Sciences & Mathematics</option>
+                        <option value="Bussines & Management">Bussines & Management</option>
+                        <option value="Medicine & Health">Medicine & Health</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="universiteAdi" placeholder="University's Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="universiteBolumu" placeholder="University's Program">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="universiteSehir" placeholder="University's City">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="universiteUlke" placeholder="University's Country">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="universiteSure" placeholder="Program's Duration">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="universiteFiyat" placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="textarea" name="universiteAciklama" placeholder="About">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">Add University</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+    </div>
+
+    <% include ./partials/footer %>

@@ -1,0 +1,70 @@
+<% include ./partials/header %>
+    <div class="container-fluid" style="margin-top:2%">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="left-side">
+                    <h3 style="text-align: center">Categories</h3>
+                    <ul class="list-group">
+                        <% kategoriler.forEach(function(kategori){ %>
+
+                            <a href="/categories/<%= kategori.kategoriAdi %>" class="list-group-item list-group-item-action">
+                                <%= kategori.kategoriAdi %>
+                            </a>
+
+                            <%  }) %>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="content">
+                    <h3 style="text-align: center">Results</h3>
+                    <% universiteler.forEach(function(uni){ %>
+                        <div class="col-md-12" style="margin-top:3%;">
+                            <ul class="list-unstyled">
+                                <li class="media">
+                                    <div class="col-md-3">
+                                        <a href="/university/<%= uni._id %>/detail">
+                                            <strong>
+                                                <em style="color:maroon">
+                                                    <%= uni.bolum %>
+                                                </em>
+                                            </strong>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 mb-1">
+                                                <%= uni.adi %>
+                                            </h5>
+                                            <em>
+                                                <%= uni.sehir %>,
+                                                    <%= uni.ulke %>
+                                            </em>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h6 class="mt-0 mb-1">
+                                            <%= uni.fiyat %> EUR/year
+                                        </h6>
+                                        <em>
+                                            <% if(uni.sure == "48 Months") { %>
+                                                48 Months
+                                                <% } else {%>
+                                                    <%= uni.sure %> Months
+                                                        <% } %>
+                                        </em>
+                                    </div>
+                                </li>
+                                <hr>
+                            </ul>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <% include ./partials/footer %>

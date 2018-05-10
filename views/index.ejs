@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PhD Portal</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body class="bg">
+    <div>
+        <div class="container">
+            <div style="background:rgba(0,0,0,.5);margin-top:2.5%" align="center" class="row">
+                <h1>
+                    <hr> Welcome, Dear PhD's Student</h1>
+                <form class="form-inline" style="padding-right:1%" method="post" action="/categories">
+                    <select class="form-control" name="kategori">
+                        <% kategoriler.forEach(function(kategori){ %>
+                            <option value="<%= kategori.kategoriAdi %>">
+                                <%= kategori.kategoriAdi %>
+                            </option>
+                            <% }) %>
+                    </select>
+                    <select class="form-control" name="universite">
+                        <% universiteler.forEach(function(uni){ %>
+                            <option value="<%= uni.adi %>">
+                                <%= uni.adi %>
+                            </option>
+                            <% }) %>
+                    </select>
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <a href="/home"><button id="benimButon" class="btn btn-outline-success" type="submit">Enter the Portal</button></a>
+               <!--  <a  class="btn btn-outline-success" href="/home">Enter the Portal</a> -->
+                <hr>
+                <p>Powered By Yunus BATUŞ</p>
+            </div>
+        </div>
+    </div>
+    <% include ./partials/footer %>
